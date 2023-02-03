@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/mainPageFragment">
+
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.fthbsr.phonebook.ui.MainPageFragment"
+        android:label="MainPageFragment"
+        tools:layout="@layout/fragment_main_page">
+        <action
+            android:id="@+id/updatePerson"
+            app:destination="@id/updatePageFragment" />
+        <action
+            android:id="@+id/newPerson"
+            app:destination="@id/newRecordPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatePageFragment"
+        android:name="com.fthbsr.phonebook.ui.UpdatePageFragment"
+        android:label="UpdatePageFragment"
+        tools:layout="@layout/fragment_update_page">
+        <argument
+            android:name="person"
+            app:argType="com.fthbsr.phonebook.Data.Person" />
+    </fragment>
+    <fragment
+        android:id="@+id/newRecordPageFragment"
+        android:name="com.fthbsr.phonebook.ui.NewRecordPageFragment"
+        android:label="NewRecordPageFragment"
+        tools:layout="@layout/fragment_new_record_page"/>
+
+</navigation>
